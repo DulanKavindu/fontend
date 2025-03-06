@@ -1,19 +1,14 @@
+export default function LoginPage() {
+    return (
+     <div className="bg-red-400 w-full h-screen flex justify-center items-center">
+      <div className="bg-blue-600 w-[500px] h-[500px] ">
+        <img src="/images.jpg"></img>
 
-import './loginpage.css'
-export default function LoginPage(){
-return(
-    <>
-    <div>
-    <input type="text" placeholder="enter your name">
-    </input>
-    <input type="password" placeholder="enter your password">
-    </input>
-    <button>
-        Login
-    </button>
-    </div>
+      </div>
 
-    </>
-)
 
-}
+     </div>
+      
+    );
+  }
+  
