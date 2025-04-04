@@ -21,7 +21,7 @@ export default function ProductForm() {
 
     const altname=productalt.split(",")
     const imgs =productimg.split(",")
-const product={
+    const product={
     productid:productid,
     productname:productname,
     altname:altname,
@@ -34,7 +34,7 @@ const product={
 }
 const token =localStorage.getItem("token")
 try{
-    await axios.post("import.meta.env.VITE_BACKEND_URL/api/product", product, {
+    await axios.post(import.meta.env.VITE_BACKEND_URL+"/api/product", product, {
         headers: {
           Authorization: "Bearer " + token,
         

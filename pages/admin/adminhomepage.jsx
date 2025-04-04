@@ -10,7 +10,7 @@ export default function AdminHomepage() {
   const [productlord, setProductlord]=useState(false)
   useEffect(() => {
     if(!productlord)
-    axios.get("import.meta.env.VITE_BACKEND_URL/api/product").then((res) => {
+    axios.get(import.meta.env.VITE_BACKEND_URL+"/api/product").then((res) => {
       setProduct(res.data.list);
       setProductlord(true)
     });
@@ -58,12 +58,13 @@ export default function AdminHomepage() {
                   <button onClick={()=>{
                    const token =localStorage.getItem("token");
                   console.log(localStorage.getItem("token"))
-
-                   axios.delete(`import.meta.env.VITE_BACKEND_URL/api/product/${products.productid}`,{
+                  axios.delete(import.meta.env.VITE_BACKEND_URL+"/api/product/${products.productid}",{
                     headers:{
                       Authorization: `Bearer ${token}`
 
+                    
                     }
+                  
                    }).then((res)=>{
                     console.log(res.data)
                     toast.success("product deleted")

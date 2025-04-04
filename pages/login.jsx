@@ -6,7 +6,7 @@ import toast  from "react-hot-toast";
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-console.log(import.meta.env.VITE_BACKEND_URL)
+console.log()
   function login(){
     axios.post(import.meta.env.VITE_BACKEND_URL+"/api/user/login",{
       email:email,
