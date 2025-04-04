@@ -58,7 +58,7 @@ export default function AdminHomepage() {
                   <button onClick={()=>{
                    const token =localStorage.getItem("token");
                   console.log(localStorage.getItem("token"))
-                  axios.delete(import.meta.env.VITE_BACKEND_URL+"/api/product/${products.productid}",{
+                  axios.delete(import.meta.env.VITE_BACKEND_URL+"/api/product/"+products.productid,{
                     headers:{
                       Authorization: `Bearer ${token}`
 
