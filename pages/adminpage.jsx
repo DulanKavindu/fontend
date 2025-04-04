@@ -2,6 +2,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import { GoGraph } from "react-icons/go";
 import { FaBoxOpen, FaUsers } from "react-icons/fa";
 import AdminHomepage from "./admin/adminhomepage";
+import ProductForm from "./admin/productfrom";
 
 export default function Adminpage() {
   return (
@@ -28,7 +29,9 @@ export default function Adminpage() {
       <Route path="/darshbord" element={<h1>this is the dashbord</h1>}></Route>
       <Route path="/product" element={<AdminHomepage></AdminHomepage>}></Route>
       <Route path="/customer" element={<h1>this is the customer</h1>}></Route>
+      <Route path="/product/productfrom" element={<ProductForm></ProductForm>}></Route>
       <Route path="/*" element={<h1>this page notfound 404 erorr</h1>}></Route>
+      
       </Routes>
       </div>
   

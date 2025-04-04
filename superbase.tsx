@@ -1,0 +1,4 @@
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB2cnlrb3JsdWFkaGJkd2tveHhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE0OTg4NzcsImV4cCI6MjA1NzA3NDg3N30.t7iQovWsAjQOr_YaCj-eMAeuXEa1RKHzGOBvzT86MTU
+
+
+https://pvrykorluadhbdwkoxxj.supabase.co
