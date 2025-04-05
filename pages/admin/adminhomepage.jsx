@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { FaTrash, FaPencilAlt } from "react-icons/fa";
-import { Link,  } from "react-router-dom";
+import { Link, useNavigate,  } from "react-router-dom";
 
 export default function AdminHomepage() {
   const [product, setProduct] = useState([]);
@@ -15,7 +15,7 @@ export default function AdminHomepage() {
       setProductlord(true)
     });
   }, [productlord]);
-
+  const naviagate = useNavigate();
   return (
     <div className="min-h-screen bg-gray-100 p-8">
       <h1 className="text-3xl font-semibold text-center mb-8">Admin Product List</h1>
@@ -77,7 +77,9 @@ export default function AdminHomepage() {
                   }} className="text-red-500 hover:text-red-700">
                     <FaTrash size={20} />
                   </button>
-                  <button className="text-blue-500 hover:text-blue-700">
+                  <button className="text-blue-500 hover:text-blue-700" onClick={()=>{
+                    naviagate("/admin/product/productedting")
+                  }}>
                     <FaPencilAlt size={20} />
                   </button>
                 </td>
