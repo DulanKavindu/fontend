@@ -1,20 +1,26 @@
 import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 
 export default function ProductedtingForm() {
-  const [productid, setProductid] = useState("");
-  const [productname, setProductname] = useState("");
+  const navi =useNavigate()
+  const location = useLocation();
+  const product = location.state.product;
+  if(product==null){
+     navi("/admin/productfrom")
+  }
+  const [productid, setProductid] = useState(product.productid);
+  const [productname, setProductname] = useState(product.productname);
   const [productalt, setProductalt] = useState("");
   const [productimg, setProductimg] = useState("");
-  const [productprice, setProductprice] = useState("");
-  const [productlprice, setProductlprice] = useState("");
-  const [productstok, setProductstok] = useState("");
-  const [productdec, setProductdec] = useState("");
-  const navi =useNavigate()
+  const [productprice, setProductprice] = useState(product.price);
+  const [productlprice, setProductlprice] = useState(product.lprice);
+  const [productstok, setProductstok] = useState(product.stock);
+  const [productdec, setProductdec] = useState(product.describtion);
+  
 
  async function additems(){
 
