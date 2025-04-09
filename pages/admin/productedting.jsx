@@ -1,12 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 
 
-
-export default function ProductedtingForm() {
-  
+export default function ProductForm() {
   const [productid, setProductid] = useState("");
   const [productname, setProductname] = useState("");
   const [productalt, setProductalt] = useState("");
@@ -15,7 +14,7 @@ export default function ProductedtingForm() {
   const [productlprice, setProductlprice] = useState("");
   const [productstok, setProductstok] = useState("");
   const [productdec, setProductdec] = useState("");
-  
+  const navi =useNavigate()
 
  async function additems(){
 
@@ -42,7 +41,8 @@ try{
       }
 })
       
-   
+    toast.success("product saved")
+    navi("/admin/product")
   
  
  
