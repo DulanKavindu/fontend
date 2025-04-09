@@ -78,7 +78,7 @@ export default function AdminHomepage() {
                     <FaTrash size={20} />
                   </button>
                   <button className="text-blue-500 hover:text-blue-700" onClick={()=>{
-                    naviagate("/pages/admin/productedting")
+                    naviagate(`/admin/productedting`)
                   }}>
                     <FaPencilAlt size={20} />
                   </button>
