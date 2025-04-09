@@ -32,7 +32,7 @@ export default function Adminpage() {
       <Route path="/customer" element={<h1>this is the customer</h1>}></Route>
     
       <Route path="/product/productfrom" element={<ProductForm></ProductForm>}></Route>
-      <Route path="/product/productedting" element={<ProductedtingForm></ProductedtingForm>}></Route>
+      <Route path="/edit" element={<ProductedtingForm></ProductedtingForm>}></Route>
       <Route path="/*" element={<h1>this page notfound 404 erorr</h1>}></Route>
       
       </Routes>

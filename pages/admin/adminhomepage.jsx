@@ -3,29 +3,29 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { FaTrash, FaPencilAlt } from "react-icons/fa";
-import { Link, useNavigate,  } from "react-router-dom";
+import { Link, useNavigate, } from "react-router-dom";
 
 export default function AdminHomepage() {
   const [product, setProduct] = useState([]);
-  const [productlord, setProductlord]=useState(false)
+  const [productlord, setProductlord] = useState(false)
   useEffect(() => {
-    if(!productlord)
-    axios.get(import.meta.env.VITE_BACKEND_URL+"/api/product").then((res) => {
-      setProduct(res.data.list);
-      setProductlord(true)
-    });
+    if (!productlord)
+      axios.get(import.meta.env.VITE_BACKEND_URL + "/api/product").then((res) => {
+        setProduct(res.data.list);
+        setProductlord(true)
+      });
   }, [productlord]);
   const naviagate = useNavigate();
   return (
     <div className="min-h-screen bg-gray-100 p-8">
       <h1 className="text-3xl font-semibold text-center mb-8">Admin Product List</h1>
-   <Link to ='/admin/product/productfrom'>
-      <button className="text-5xl absolute  border-2 bg-blue-600 hover:bg-blue-400 rounded-[5px] right-[20px] bottom-[25px] hover:rounded-full ">
-  +
-</button></Link>
+      <Link to='/admin/product/productfrom'>
+        <button className="text-5xl absolute  border-2 bg-blue-600 hover:bg-blue-400 rounded-[5px] right-[20px] bottom-[25px] hover:rounded-full ">
+          +
+        </button></Link>
 
       <div className="overflow-x-auto bg-white rounded-lg shadow-md">
-       
+
         <table className="w-full text-left table-auto">
           <thead className="bg-gray-800 text-white">
             <tr>
@@ -55,30 +55,30 @@ export default function AdminHomepage() {
                 <td className="px-4 py-2">{products.describtion}</td>
                 <td className="px-4 py-2 flex items-center space-x-4">
 
-                  <button onClick={()=>{
-                   const token =localStorage.getItem("token");
-                  console.log(localStorage.getItem("token"))
-                  axios.delete(import.meta.env.VITE_BACKEND_URL+`/api/product/+products.productid`,{
-                    headers:{
-                      Authorization: `Bearer ${token}`
+                  <button onClick={() => {
+                    const token = localStorage.getItem("token");
+                    console.log(localStorage.getItem("token"))
+                    axios.delete(import.meta.env.VITE_BACKEND_URL + `/api/product/${products.productid}`, {
+                      headers: {
+                        Authorization: `Bearer ${token}`
 
-                    
-                    }
-                  
-                   }).then((res)=>{
-                    console.log(res.data)
-                    toast.success("product deleted")
-                   }).catch((err)=>{
-                    toast.error(err)
-                   })
-                   setProductlord(false)
-                  
+
+                      }
+
+                    }).then((res) => {
+                      console.log(res.data)
+                      toast.success("product deleted")
+                    }).catch((err) => {
+                      toast.error(err)
+                    })
+                    setProductlord(false)
+
 
                   }} className="text-red-500 hover:text-red-700">
                     <FaTrash size={20} />
                   </button>
-                  <button className="text-blue-500 hover:text-blue-700" onClick={()=>{
-                    naviagate(`/admin/productedting`)
+                  <button className="text-blue-500 hover:text-blue-700" onClick={() => {
+                    naviagate(`/admin/edit`, { state: product })
                   }}>
                     <FaPencilAlt size={20} />
                   </button>

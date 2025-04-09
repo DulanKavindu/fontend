@@ -8,7 +8,7 @@ import Adminpage from '../pages/adminpage'
 import SignInPage from '../pages/singinpage'
 import { Toaster } from 'react-hot-toast'
 import Imgeuplord from '../pages/admin/testing'
-import ProductedtingForm from '../pages/admin/productedting'
+
 function App() {
 
 
@@ -26,7 +26,6 @@ function App() {
           <Route path="/admin/*" element={<Adminpage />} />
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/testing"element={<Imgeuplord></Imgeuplord>}></Route>
-          <Route path="/productedting"element={<ProductedtingForm/>}></Route>
           <Route path="/*" element={<HomePage />} />
 
 
