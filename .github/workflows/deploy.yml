@@ -3,7 +3,7 @@ name: Deploy React Frontend to EC2
 on:
   push:
     branches:
-      - main   # main branch එකට push උනාම deploy වෙයි
+      - main   # main branch 
 
 jobs:
   deploy:
