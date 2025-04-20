@@ -37,7 +37,7 @@ console.log()
      <div className="bg-green-400 w-full h-screen flex justify-center items-center">
       <div className="bg-blue-600 w-[500px] h-[500px] flex justify-center items-center flex-col">
         <img src="/images.jpg" className="rounded-full w-[100px] h-[100px]"></img>
-          <span className="text-2xl text-orange-500">Email/span>
+          <span className="text-2xl text-orange-500">Email</span>
           <input type="text" placeholder="Enter your Email"defaultValue={email} onChange={(e)=>{
             setEmail(e.target.value)
 
